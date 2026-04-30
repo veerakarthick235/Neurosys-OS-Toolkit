@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface-900 text-gray-100 font-sans antialiased;
+  }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-surface-800; }
+  ::-webkit-scrollbar-thumb { @apply bg-surface-400 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-neuro-600; }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-surface-700/50 backdrop-blur-xl border border-white/5
+           rounded-2xl shadow-xl transition-all duration-300;
+  }
+  .glass-card:hover {
+    @apply border-neuro-500/20 shadow-neuro-500/5;
+  }
+  .metric-value {
+    @apply text-3xl font-bold bg-gradient-to-r from-neuro-400 to-cyan-300
+           bg-clip-text text-transparent;
+  }
+  .sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-xl text-gray-400
+           transition-all duration-200 hover:bg-surface-600 hover:text-white;
+  }
+  .sidebar-link.active {
+    @apply bg-neuro-600/20 text-neuro-400 border-l-2 border-neuro-500;
+  }
+  .btn-primary {
+    @apply px-5 py-2.5 bg-gradient-to-r from-neuro-600 to-neuro-500
+           rounded-xl font-medium text-white shadow-lg shadow-neuro-600/25
+           hover:shadow-neuro-500/40 transition-all duration-200
+           active:scale-95;
+  }
+  .btn-danger {
+    @apply px-4 py-1.5 bg-red-500/20 text-red-400 rounded-lg text-sm
+           border border-red-500/20 hover:bg-red-500/30 transition-all;
+  }
+  .input-dark {
+    @apply w-full px-4 py-3 bg-surface-800 border border-surface-400
+           rounded-xl text-gray-200 placeholder-gray-500 outline-none
+           focus:border-neuro-500 focus:ring-1 focus:ring-neuro-500/30
+           transition-all duration-200;
+  }
+  .badge {
+    @apply px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-success { @apply bg-emerald-500/20 text-emerald-400; }
+  .badge-warning { @apply bg-amber-500/20 text-amber-400; }
+  .badge-error { @apply bg-red-500/20 text-red-400; }
+  .badge-info { @apply bg-neuro-500/20 text-neuro-400; }
+}
