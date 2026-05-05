@@ -27,3 +27,11 @@ public class EcommerceTestPlan {
         driver.quit();
     }
 }
+
+
+
+📊 Output
+Application opens in browser
+User login is performed
+Product search results are displayed
+Product is added to cart successfully
